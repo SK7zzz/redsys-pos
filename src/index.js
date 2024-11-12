@@ -34,6 +34,7 @@ class RedSys {
     terminal = "1",
     merchantURL,
     successURL,
+    merchantData,
     errorURL
   }) {
     if (!amount) throw new Error("The amount to charge is mandatory");
@@ -58,7 +59,8 @@ class RedSys {
       DS_MERCHANT_TERMINAL: terminal,
       DS_MERCHANT_MERCHANTURL: merchantURL || "",
       DS_MERCHANT_URLOK: successURL || "",
-      DS_MERCHANT_URLKO: errorURL || ""
+      DS_MERCHANT_URLKO: errorURL || "",
+      DS_MERCHANT_MERCHANTDATA: merchantData || ""
     };
 
     const Ds_MerchantParameters = new Buffer(
